@@ -18,8 +18,30 @@ end
 
 module Bamailer
   class Main < Sinatra::Base
-    get '/' do
-      "hello world!"
+
+    use Shield::Middleware
+
+    helpers Shield::Helpers
+
+    Ohm.connect(host: 'localhost', port: 6379, db: 0)
+
+    # Load routes
+    Dir['./app/routes/**/*.rb'].each do |file|
+      require file
     end
+
+    get '/' do
+      run Rack::Cascade.new [Guests]
+    end
+
+
+    #on authenticated(User) do
+    #  run Users
+    #end
+
+    #on  authenticated(Admin) do
+    #  run Admins
+    #end
+
   end
 end
