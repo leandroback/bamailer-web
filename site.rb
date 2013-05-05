@@ -8,6 +8,7 @@ require 'sinatra/base'
 require 'sinatra/contrib'
 require 'sinatra/content_for'
 require 'sinatra/config_file'
+require 'sinatra/namespace'
 require 'rack-flash'
 require 'shield'
 
@@ -18,30 +19,31 @@ end
 
 module Bamailer
   class Main < Sinatra::Base
-
+    register Sinatra::Namespace
     use Shield::Middleware
-
     helpers Shield::Helpers
+
+    configure :production, :development do
+      #enable :logging
+    end
 
     Ohm.connect(host: 'localhost', port: 6379, db: 0)
 
-    # Load routes
+    # Load routes (here /admins and /users)
     Dir['./app/routes/**/*.rb'].each do |file|
       require file
     end
 
+    # Public methods
     get '/' do
-      run Rack::Cascade.new [Guests]
+      redirect '/public'
     end
 
+    get '/login' do
+      "login"
+    end
 
-    #on authenticated(User) do
-    #  run Users
-    #end
-
-    #on  authenticated(Admin) do
-    #  run Admins
-    #end
-
+    get '/logout' do
+    end
   end
 end
