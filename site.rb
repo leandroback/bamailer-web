@@ -24,7 +24,8 @@ module Bamailer
     helpers Shield::Helpers
 
     configure :production, :development do
-      #enable :logging
+      #enable :loggin
+      set :haml, {:format => :html5} # default Haml format is :xhtmlg
     end
 
     Ohm.connect(host: 'localhost', port: 6379, db: 0)
@@ -40,7 +41,7 @@ module Bamailer
     end
 
     get '/login' do
-      "login"
+      haml :'public/login', layout: :'public/layout'
     end
 
     get '/logout' do
