@@ -1,4 +1,9 @@
 # encoding: utf-8
-require File.expand_path(File.join(File.dirname(__FILE__), "site.rb"))
 
-run Bamailer::Main
+require './init'
+
+run Rack::URLMap.new(
+  '/'       => MyApp::PublicApp.new,
+  '/admin'  => MyApp::AdminApp.new,
+  '/user'   => MyApp::UserApp.new
+)

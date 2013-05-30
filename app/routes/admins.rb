@@ -1,7 +1,9 @@
-module Bamailer
-  class Main < Sinatra::Base
-    namespace '/admins' do
-      before { error(401) unless authenticated(User) }
-    end
+class MyApp::AdminApp < MyApp::Base
+  get '/login' do
+    haml :login
   end
+
+  # get '/admin/login' do
+  #   haml :login
+  # end
 end

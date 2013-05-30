@@ -7,7 +7,7 @@ class Admin < Ohm::Model
   attribute :crypted_password
 
   def self.fetch(email)
-    find(:email => email).first
+    find(email: email).first
   end
   
 end
