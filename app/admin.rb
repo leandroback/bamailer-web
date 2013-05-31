@@ -1,14 +1,15 @@
 class MyApp::AdminApp < MyApp::Base
-  use Shield::Middleware, "/admin/login"
+  use Shield::Middleware, "/admin/sessions/login"
   helpers Shield::Helpers
   use Rack::Session::Cookie
 
   configure do
-    set :views, "app/views/admin"
+    set :views, "app/views/admins"
   end
 
-  before { error(401) unless authenticated(User) }
+  before { error(401) unless authenticated(Admin) }
 
+  # Add helpers only needed in admin app here
   helpers do
   end
 end
