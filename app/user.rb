@@ -1,6 +1,7 @@
 class MyApp::UserApp < MyApp::Base
   use Shield::Middleware, "/user/sessions/login"
   helpers Shield::Helpers
+  use Rack::Session::Cookie
 
   configure do
     set :views, "app/views/users"
