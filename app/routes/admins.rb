@@ -1,5 +1,5 @@
 class MyApp::AdminApp < MyApp::Base
   get '/sessions/login' do
-    haml :login
+    haml :login, layout: :layout
   end
 end

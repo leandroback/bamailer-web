@@ -1,1 +1,14 @@
-Login
+.content
+  .container
+    .row
+      .span12
+        %form{ :action => "/login", :method => "post"}
+          %h2= 'Users Login'
+          %br
+          %p Name
+          %input.form-input{ :name => "username", :type => "text", :size => "20" }
+          %p Password:
+          %input.form-input{ :name => "password", :type => "password", :size => "20" }
+          %br
+          %br
+          %input.btn{ :name => "submit", :type => "submit", :value => "Submit"}
