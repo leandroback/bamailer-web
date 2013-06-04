@@ -7,7 +7,7 @@ class MyApp::AdminApp < MyApp::Base
     set :views, "app/views/admins"
   end
 
-  before { error(401) unless authenticated(Admin) }
+  before { error(401) unless authenticated(Admin) || request.path_info == "/sessions/login" }
 
   # Add helpers only needed in admin app here
   helpers do

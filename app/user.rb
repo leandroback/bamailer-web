@@ -5,6 +5,8 @@ class MyApp::UserApp < MyApp::Base
   configure do
     set :views, "app/views/users"
   end
+
+  before { error(401) unless authenticated(Admin) || request.path_info == "/sessions/login" }
   
   # Add helpers only needed in user app here
   helpers do
