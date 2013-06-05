@@ -1,13 +1,11 @@
-class Admin < Ohm::Model
+class Admin
+  include Mongoid::Document
   include Shield::Model
 
-  attribute :email
-  index :email
-
-  attribute :crypted_password
+  field :email, type: String
+  field :crypted_password, type: String
 
   def self.fetch(email)
-    find(email: email).first
+    where(email: email).first
   end
-  
 end

@@ -3,7 +3,7 @@ require "rubygems"
 require "bundler/setup"
 
 # Include required gems
-%w{ sinatra/base rack-flash sinatra/content_for ohm shield }.each{ |req| require req }
+%w{ sinatra/base rack-flash sinatra/content_for mongoid shield }.each{ |req| require req }
 
 # Require custom libraries
 # Dir["lib/*.rb"].sort.each {|req| require_relative req}

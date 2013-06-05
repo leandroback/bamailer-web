@@ -7,7 +7,7 @@ module MyApp
     helpers do
     end
 
-    Ohm.connect(host: 'localhost', port: 6379, db: 0)
+    Mongoid.load!('./config/mongoid.yml', :development)
 
     #FIXME: make a view
     not_found do
