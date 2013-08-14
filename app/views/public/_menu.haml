@@ -9,15 +9,15 @@
     .navbar-inner
       .container
         %ul.nav
-          %li.active
+          %li{ :class => (request.path_info == '/') ? 'class => active' : '' }
             %a{:href => "/"} Home
-          %li
+          %li{ :class => (request.path_info == '/') ? '' : '' }
             %a{:href => "#"} Empresa
-          %li
+          %li{ :class => (request.path_info == '/caracteristicas') ? 'class => active' : '' }
             %a{:href => "/caracteristicas"} Características
-          %li
+          %li{ :class => (request.path_info == '/tutoriales') ? 'class => active' : '' }
             %a{:href => "/tutoriales"} Tutoriales
-          %li
+          %li{ :class => (request.path_info == '/contacto') ? 'class => active' : '' }
             %a{:href => "/contacto"} Contacto
           %li.btn-ppal.btn-sistema
             %a{:href => "http://newsletter.backing.com.ar/", :target => "_blank"} Ingreso al sistema
