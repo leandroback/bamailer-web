@@ -668,3 +668,7 @@ label {
   width: -moz-fit-content;
 }
 
+.recaptcha {
+  height: 130px;
+}
+

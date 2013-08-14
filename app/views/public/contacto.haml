@@ -3,13 +3,15 @@
     #tittle
       .content-tittle
         %h2 Contáctenos - Complete sus datos
-    %form
+    %form{ action: "/contacto/new", method: :post, name: "contacto_form", id: "contacto_form" }
       %fieldset
         %label Nombre
-        %input{:placeholder => "…", :type => "text"}/
+        %input{:placeholder => "…", :type => "text", :name => "contact[name]"}/
         %label email
-        %input{:placeholder => "…", :type => "text"}/
+        %input{:placeholder => "…", :type => "text", :name => "contact[email]"}/
       %label Envíe un comentario
-      %textarea{:rows => "3", :style => "width: 599px; height: 113px;"}
+      %textarea{:rows => "3", :style => "width: 599px; height: 113px;", :name => "contact[comment]"}
+      .recaptcha
+        = recaptcha_tag :ajax, :display => { :theme => 'clean'}
       %br/
       %button.btn{:type => "submit"} Enviar
