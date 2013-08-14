@@ -1,0 +1,15 @@
+.row
+  .span12
+    #tittle
+      .content-tittle
+        %h2 Contáctenos - Complete sus datos
+    %form
+      %fieldset
+        %label Nombre
+        %input{:placeholder => "…", :type => "text"}/
+        %label email
+        %input{:placeholder => "…", :type => "text"}/
+      %label Envíe un comentario
+      %textarea{:rows => "3", :style => "width: 599px; height: 113px;"}
+      %br/
+      %button.btn{:type => "submit"} Enviar

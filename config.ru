@@ -3,7 +3,7 @@
 require './init'
 
 run Rack::URLMap.new(
-  '/'       => MyApp::PublicApp.new,
-  '/admin'  => MyApp::AdminApp.new,
-  '/user'   => MyApp::UserApp.new
+  '/'       => Bamailer::PublicApp.new,
+  '/admin'  => Bamailer::AdminApp.new,
+  '/user'   => Bamailer::UserApp.new
 )
