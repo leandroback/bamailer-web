@@ -12,6 +12,7 @@ module Bamailer
 
     configure :development do
       register Sinatra::Reloader
+      register Sinatra::Verbose
     end
     
     configure do
