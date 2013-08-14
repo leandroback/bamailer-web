@@ -7,21 +7,23 @@ module Bamailer
     register Sinatra::Partial
     set :partial_template_engine, :haml
     enable :partial_underscores
-    # use Rack::Flash, :accessorize => [:notice, :error]
+    
+    use Rack::Session::Cookie, secret: SecureRandom.hex(64)
+    use Rack::Flash, :accessorize => [:notice, :error]
     use Rack::Static, urls: ['/css', '/img', '/js'], root: 'public'
+
+    Mongoid.load!('./config/mongoid.yml', :development)
 
     configure :development do
       register Sinatra::Reloader
     end
-    
+
     configure do
     end
 
     # These will be available for all MyApp subclasses
     helpers do
     end
-
-    Mongoid.load!('./config/mongoid.yml', :development)
 
     #FIXME: make a view
     not_found do

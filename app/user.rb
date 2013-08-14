@@ -2,7 +2,6 @@ module Bamailer
   class UserApp < Bamailer::Base
     use Shield::Middleware, "/user/sessions/login"
     helpers Shield::Helpers
-    use Rack::Session::Cookie, secret: SecureRandom.hex(64)
 
     configure do
       set :views, "app/views/users"

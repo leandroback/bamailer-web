@@ -4,6 +4,9 @@ module Bamailer
       set :views, "app/views/public"
     end
 
+    use Rack::Recaptcha, public_key: '6LdCHuYSAAAAAEOE_WVcEAFYj_kBUINabYzIO469', private_key: '6LdCHuYSAAAAAJ0AEDxLoQ0uLR16o5QPRq0ODgaN'
+    helpers Rack::Recaptcha::Helpers
+
     not_found do
       "not found public"
     end

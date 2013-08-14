@@ -3,14 +3,16 @@
     #tittle
       .content-tittle
         %h2 Solicitud de servicio
-    %form
+    %form{ action: "/servicio/new", method: :post, name: "servicio_form", id: "servicio_form" }
       %fieldset
         %label Nombre
-        %input{:placeholder => "…", :type => "text"}/
+        %input{:placeholder => "…", :type => "text", :name => "service_request[name]"}/
         %label email
-        %input{:placeholder => "…", :type => "text"}/
+        %input{:placeholder => "…", :type => "text", :name => "service_request[email]"}/
         %label Teléfono
-        %input{:placeholder => "…", :type => "text"}/
+        %input{:placeholder => "…", :type => "text", :name => "service_request[telephone]"}/
         %label Cantidad de emails a enviar
-        %input{:placeholder => "…", :type => "text"}/
+        %input{:placeholder => "…", :type => "text", :name => "service_request[emails_to_deliver]"}/
+        .recaptcha
+          = recaptcha_tag :ajax, :display => { :theme => 'clean'}
       %button.btn{:type => "submit"} Enviar
