@@ -27,5 +27,9 @@ module Bamailer
     get '/politicas-de-privacidad-en' do
       haml :politicas_de_privacidad_en
     end
+
+    get '/form-servicio' do
+      haml :form_servicio
+    end
   end
 end
