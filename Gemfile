@@ -14,6 +14,7 @@ gem 'capistrano'
 gem 'shield'
 gem 'rack-protection'
 gem 'shotgun'
+gem 'sinatra-partial'
 
 group :test do
   gem 'capybara'

@@ -1,0 +1,16 @@
+.row
+  .span12
+    #tittle
+      .content-tittle
+        %h2 Solicitud de servicio
+    %form
+      %fieldset
+        %label Nombre
+        %input{:placeholder => "…", :type => "text"}/
+        %label email
+        %input{:placeholder => "…", :type => "text"}/
+        %label Teléfono
+        %input{:placeholder => "…", :type => "text"}/
+        %label Cantidad de emails a enviar
+        %input{:placeholder => "…", :type => "text"}/
+      %button.btn{:type => "submit"} Enviar

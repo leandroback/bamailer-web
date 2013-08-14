@@ -1,4 +1,4 @@
-class Admin
+class UserAdmin
   include Mongoid::Document
   include Shield::Model
 

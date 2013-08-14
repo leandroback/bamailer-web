@@ -1,15 +1,24 @@
-class MyApp::UserApp < MyApp::Base
-  use Shield::Middleware, "/user/sessions/login"
-  helpers Shield::Helpers
-  use Rack::Session::Cookie
+module Bamailer
+  class UserApp < Bamailer::Base
+    use Shield::Middleware, "/user/sessions/login"
+    helpers Shield::Helpers
+    use Rack::Session::Cookie, secret: SecureRandom.hex(64)
 
-  configure do
-    set :views, "app/views/users"
-  end
+    configure do
+      set :views, "app/views/users"
+    end
 
-  before { error(401) unless authenticated(Admin) || request.path_info == "/sessions/login" }
-  
-  # Add helpers only needed in user app here
-  helpers do
+    before { require_sign_in }
+
+    # Add helpers only needed in User app here
+    helpers do
+      def current_user
+        authenticated(User)
+      end
+
+      def require_sign_in
+        error(401) unless authenticated(User) || request.path_info == '/sessions/login'
+      end
+    end
   end
 end
