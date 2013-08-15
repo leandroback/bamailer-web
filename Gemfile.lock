@@ -40,6 +40,7 @@ GEM
       tzinfo (~> 0.3.22)
     moped (1.5.1)
     multi_json (1.7.9)
+    multimap (1.1.2)
     nest (1.1.2)
       redis
     net-scp (1.1.2)
@@ -70,6 +71,8 @@ GEM
     raindrops (0.11.0)
     rake (10.1.0)
     redis (3.0.4)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     shield (2.0.0)
       armor
     shotgun (0.9)
@@ -106,6 +109,7 @@ DEPENDENCIES
   capybara
   haml (= 4.0.3)
   mongoid (~> 3.0.0)
+  multimap (= 1.1.2)
   ost (= 0.1.5)
   ost-bin (= 0.0.3)
   rack-flash3 (= 1.0.3)
@@ -113,6 +117,7 @@ DEPENDENCIES
   rack-recaptcha (= 0.6.6)
   rack-test (= 0.6.2)
   rake (= 10.1.0)
+  rest-client (= 1.6.7)
   shield (= 2.0.0)
   shotgun (= 0.9)
   sinatra (= 1.4.3)
