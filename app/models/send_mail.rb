@@ -2,7 +2,7 @@ class SendMail
   def deliver(object)
     data = Multimap.new
     data[:from] = object.email
-    data[:to] = 'rapofran@gmail.com' #'soporte@backing-online.com'
+    data[:to] = 'soporte@backing-online.com'
     data[:subject] = object.subject
     data[:html] =  object.body_email
     data["o:tag"] = "Bamailer" #FIXME: esta bien ?
