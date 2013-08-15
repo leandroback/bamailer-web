@@ -38,6 +38,7 @@ module Bamailer
 
         begin
           if contact.save
+            SendMail.new.deliver(contact)
             flash[:notice] = 'Formulario de contacto enviado correctamente'
           else
             flash[:error] = 'Por favor, verifique los datos ingresados'
@@ -61,6 +62,7 @@ module Bamailer
 
         begin
           if service_request.save
+            SendMail.new.deliver(service_request)
             flash[:notice] = 'Solicitud de servicio enviada correctamente'
           else
             flash[:error] = 'Por favor, verifique los datos ingresados'

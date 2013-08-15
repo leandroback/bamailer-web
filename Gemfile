@@ -16,6 +16,8 @@ gem 'rack-protection', '1.5.0'
 gem 'shotgun', '0.9'
 gem 'sinatra-partial', '0.4.0'
 gem 'rack-recaptcha', '0.6.6'
+gem 'rest-client', '1.6.7'
+gem 'multimap', '1.1.2'
 
 group :test do
   gem 'capybara'
