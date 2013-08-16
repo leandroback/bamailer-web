@@ -2,7 +2,7 @@
 require 'bundler'
 
 # Include required gems
-%w{ sinatra/base rack-flash haml rack/recaptcha sinatra/content_for mongoid shield 
+%w{ sinatra/base rack-flash haml rack/recaptcha sinatra/contrib sinatra/content_for mongoid shield 
   sinatra/reloader sinatra/partial multimap rest-client }.each{ |req| require req }
 
 # Require app code

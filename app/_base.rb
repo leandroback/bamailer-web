@@ -12,6 +12,9 @@ module Bamailer
     use Rack::Flash, :accessorize => [:notice, :error]
     use Rack::Static, urls: ['/css', '/img', '/js'], root: 'public'
 
+    register Sinatra::ConfigFile
+    config_file 'config/config.yml'
+
     Mongoid.load!('./config/mongoid.yml', :development)
 
     configure :development do
