@@ -8,7 +8,7 @@ module Bamailer
     helpers Rack::Recaptcha::Helpers
 
     not_found do
-      "not found public"
+      haml :'404'
     end
 
     error do
