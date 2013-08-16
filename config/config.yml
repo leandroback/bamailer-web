@@ -1,0 +1,12 @@
+development:
+  recaptcha:
+    public_key: '6LdCHuYSAAAAAEOE_WVcEAFYj_kBUINabYzIO469'
+    private_key: '6LdCHuYSAAAAAJ0AEDxLoQ0uLR16o5QPRq0ODgaN'
+test:
+  recaptcha:
+    public_key: '6LdCHuYSAAAAAEOE_WVcEAFYj_kBUINabYzIO469'
+    private_key: '6LdCHuYSAAAAAJ0AEDxLoQ0uLR16o5QPRq0ODgaN'
+production:
+  recaptcha:
+    public_key: '6LdCHuYSAAAAAEOE_WVcEAFYj_kBUINabYzIO469'
+    private_key: '6LdCHuYSAAAAAJ0AEDxLoQ0uLR16o5QPRq0ODgaN'
