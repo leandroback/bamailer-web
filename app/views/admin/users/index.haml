@@ -1,0 +1,41 @@
+%h4
+  Users
+.row
+  .span12
+    %a{:class => "btn btn-mini btn-primary pull-right", :href => "#"}
+      New User
+    %br
+    %hr
+.row
+  .span12
+    %table.table.table-condensed
+      %thead
+        %tr
+          %th
+            Created At
+          %th
+            Nick
+          %th
+            email
+          %th
+            Cant Links
+          %th
+            Actions
+      %tboby
+        - @users.each do |user|
+          %tr
+            %td
+              = user.created_at.strftime("%d-%m-%Y") rescue ""
+            %td
+              = user.nick
+            %td
+              = user.email
+            %td
+              = user.links.size
+            %td.span3
+              %a{:href=>"/admin/users/#{user.id}/links", :class => "btn btn-mini btn-primary"}
+                Links
+              %a{:href=>"/admin/users/#{user.id}/delete", :class => "btn btn-mini btn-danger"}
+                Remove
+              %a{:href=>"/admin/#", :class => "btn btn-mini btn-success"}
+                Edit

@@ -11,7 +11,21 @@
       = partial 'navbar'
 
     .container
-      = yield
+      - if flash[:error]
+        .alert.alert-error
+          %button.close{type: "button", data:{dismiss: "alert"}}
+            &times;
+          = flash[:error]
+
+      - if flash[:notice]
+        .alert.alert-success
+          %button.close{type: "button", data:{dismiss: "alert"}}
+            &times;
+          = flash[:notice]
+      .content
+        .row
+          .span12
+            = yield
 
     / Placed at the end of the document so the pages load faster
     %script{ type: 'text/javascript', src: '/js/jquery.2.0.min.js' }

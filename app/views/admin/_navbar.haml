@@ -9,8 +9,9 @@
       .nav-collapse
         %ul.nav
           %li.active
-            %a{:href => "/"} Home
+            %a{href: "/admin/users"}
+              Users
+        %ul.nav.pull-right
           %li
-            %a{:href => "/admin"} Admins
-          %li
-            %a{:href => "/user"} Users
+            %a{href: "/admin/sessions/logout"}
+              Logout
