@@ -15,9 +15,9 @@ class SendMail
     data = Multimap.new
     data[:from] = 'soporte@backing-online.com'
     data[:to] = object.email
-    data[:subject] = 'Muchas gracias por contactarse'
-    data[:html] =  "Muchas gracias por contactarse con nosotros, a la brevedad nos pondremos "\
-                    "en contacto con usted.<br><br>Muchas Gracias<br>Staff BAMailer"
+    data[:subject] = 'Gracias por su Contacto - BAmailer - BACKING S.A.'
+    data[:html] =  "Gracias por su contacto, a la brevedad nos comunicaremos con usted. "\
+                    "<br><br>Staff de BAmailer"
     data["o:tag"] = "Bamailer" #FIXME: esta bien ?
     
     RestClient.post "https://api:key-5-9kwbqc3twn0mdj4qsdrlm2cv91qvv6"\
