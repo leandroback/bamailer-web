@@ -8,4 +8,8 @@ class UserAdmin
   def self.fetch(email)
     where(email: email).first
   end
+
+  def self.[](id)
+    find id
+  end
 end

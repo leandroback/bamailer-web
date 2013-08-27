@@ -1,0 +1,28 @@
+!!!
+%html{html_attrs}
+  %head
+    %meta{:'http-equiv' => 'Content-Type', :content => 'text/html; charset=utf-8'}
+    %meta{:name => 'lang', :content => 'en'}
+    %title Bamailer
+    %link{:href=>'/css/bootstrap.css', :media => 'screen', :rel => 'stylesheet', :type => 'text/css'}
+    %link{:href => '/css/admin-site.css', :media => 'screen', :rel => 'stylesheet'}/
+  %body
+    %div
+      .navbar.navbar-fixed-top.navbar-inverse
+        .navbar-inner
+          .container
+            %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
+            %a.brand{:href => "/"} Bamailer
+
+    .container
+      .content
+        .row
+          .span12
+            = yield
+
+    / Placed at the end of the document so the pages load faster
+    %script{ type: 'text/javascript', src: '/js/jquery.2.0.min.js' }
+    %script{ type: 'text/javascript', src: '/js/bootstrap.js' }
