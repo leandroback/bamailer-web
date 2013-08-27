@@ -7,7 +7,7 @@ module Bamailer
     register Sinatra::Partial
     set :partial_template_engine, :haml
     enable :partial_underscores
-    
+
     use Rack::Session::Cookie, secret: SecureRandom.hex(64)
     use Rack::Flash, :accessorize => [:notice, :error]
     use Rack::Static, urls: ['/css', '/img', '/js'], root: 'public'
