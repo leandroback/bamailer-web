@@ -6,6 +6,8 @@ class User
   field :email, type: String
   field :crypted_password, type: String
 
+  validates :email, presence: true, uniqueness: true
+
   def self.fetch(email)
     where(email: email).first
   end
