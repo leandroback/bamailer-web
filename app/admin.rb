@@ -12,7 +12,7 @@ module Bamailer
     # Add helpers only needed in Admin app here
     helpers do
       def current_user
-        authenticated(UserAdmin)
+        authenticated UserAdmin
       end
 
       def require_sign_in

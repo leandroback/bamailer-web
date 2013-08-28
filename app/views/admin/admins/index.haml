@@ -1,0 +1,39 @@
+%h4
+  Usuarios
+.row
+  .span12
+    %a{:class => "btn btn-mini btn-primary pull-right", :href => "/admin/admins/new"}
+      Nuevo Administrador
+    %br
+    %hr
+.row
+  .span12
+    - if @admins.any?
+      %table.table.table-condensed
+        %thead
+          %tr
+            %th
+              Creado
+            %th
+              Email
+            %th
+              Acciones
+        %tboby
+          - @admins.each do |admin|
+            %tr
+              %td
+                = admin.created_at.strftime("%d-%m-%Y") rescue ""
+              %td
+                = admin.email
+              %td.span3
+                %a{:href=>"/admin/admins/#{admin.id}", :class => "btn btn-mini"}
+                  Ver
+                %a{:href=>"/admin/admins/#{admin.id}/edit", :class => "btn btn-mini btn-success"}
+                  Editar
+                %form{:action => "/admin/admins/#{admin.id}", :method => "post", :onsubmit => "return confirm('Are you sure you want to delete?');", :class => "btn-delete"}
+                  %input{:type => 'submit', :name=> "_method", :value => 'delete', :class => 'btn btn-mini btn-danger pull-right'}
+    - else
+      .alert.alert-success
+        %button.close{type: "button", data:{dismiss: "alert"}}
+          &times;
+        No hay usuarios administradores
