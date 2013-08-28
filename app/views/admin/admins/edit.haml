@@ -1,0 +1,13 @@
+%h4
+  Editar Usuario
+.row
+  .span12
+    %a{:class => "btn btn-mini btn-primary pull-right", :href => "/admin/admins"}
+      Volver
+    %br
+    %hr
+
+%form.form-horizontal{:action => "/admin/admins/#{@admin.id}", :method => :post, :name => "admin", :id => "admin"}
+  %input{:name=>"_method", :type=>"hidden", :value=>"put"}
+  = partial :'admins/form'
+  %button.btn.btn-primary{:type => "submit"}  Guardar

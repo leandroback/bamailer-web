@@ -1,7 +1,7 @@
 module Bamailer
   class Base < Sinatra::Base
     set :root, Dir.pwd
-    set :haml,   :format => :html5
+    set :haml, :format => :html5
     set :public_folder, File.dirname(__FILE__) + '/public'
 
     register Sinatra::Partial
@@ -11,6 +11,7 @@ module Bamailer
     use Rack::Session::Cookie, secret: SecureRandom.hex(64)
     use Rack::Flash, :accessorize => [:notice, :error]
     use Rack::Static, urls: ['/css', '/img', '/js'], root: 'public'
+    use Rack::MethodOverride
 
     register Sinatra::ConfigFile
     config_file 'config/config.yml'

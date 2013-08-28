@@ -1,0 +1,12 @@
+%h4
+  Nueva Usuario
+.row
+  .span12
+    %a{:class => "btn btn-mini btn-primary pull-right", :href => "/admin/users"}
+      Volver
+    %br
+    %hr
+
+%form.form-horizontal{:action => "/admin/users/create", :method => :post, :name => "users", :id => "users"}
+  = partial 'users/form'
+  %button.btn.btn-primary{:type => "submit"} Crear
