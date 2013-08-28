@@ -1,0 +1,10 @@
+.control-group
+  %label.control-label{:for => "name"}
+    Email
+  .controls
+    %input#name{:type => "text", :name => "user[email]", :value => "#{@user.email rescue ''}", autofocus: true}
+.control-group
+  %label.control-label{:for => "name"}
+    Contraseña
+  .controls
+    %input#name{:type => "password", :name => "user[password]", :value => "#{@user.password rescue ''}"}

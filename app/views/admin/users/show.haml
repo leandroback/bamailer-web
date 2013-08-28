@@ -1,0 +1,18 @@
+%h4
+  Usuario
+.row
+  .span12
+    %a{:class => "btn btn-mini btn-primary pull-right", :href => "/admin/users"}
+      Volver
+    %br
+    %hr
+.row
+  .span4
+    %p
+      Email:
+    %p
+      = @user.email
+    %p
+      Creado:
+    %p
+      = @user.created_at.strftime("%d/%m/%Y")

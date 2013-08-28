@@ -1,5 +1,6 @@
 class User
   include Mongoid::Document
+  include Mongoid::Timestamps
   include Shield::Model
 
   field :email, type: String
@@ -7,5 +8,9 @@ class User
 
   def self.fetch(email)
     where(email: email).first
+  end
+
+  def self.[](id)
+    find id
   end
 end
