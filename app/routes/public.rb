@@ -12,6 +12,10 @@ module Bamailer
       haml :tutoriales
     end
 
+    get '/empresa' do
+      haml :empresa
+    end
+
     get '/contacto' do
       haml :contacto
     end
